@@ -50,6 +50,12 @@ const getListado = () => {
     return listadoPorHacer;
 }
 
+const getFiltrado = (completado) => {
+    cargarDB();
+    let result = listadoPorHacer.filter(tarea => tarea.completado === completado);
+    return result;
+}
+
 const actualizar = (descripcion, completado = true) => {
     // Cargamos la BBDD
     cargarDB();
@@ -106,5 +112,6 @@ module.exports = {
     crear,
     getListado,
     actualizar,
-    borrar
+    borrar,
+    getFiltrado
 }

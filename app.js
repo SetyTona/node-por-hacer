@@ -16,10 +16,23 @@ switch (comando) {
         break;
     case 'listar':
         // Ejemplo de como lanzar la llamada a esta función:
-        //  node app actualizar listar
+        //  node app listar
 
         let listado = porHacer.getListado();
         for (let tarea of listado) {
+            console.log('============== Por Hacer ==============.'.green);
+            console.log(tarea.descripcion);
+            console.log(`Estado: ${tarea.completado}`);
+            console.log('=======================================.'.green);
+
+        }
+        break;
+    case 'filtrar':
+        // Ejemplo de como lanzar la llamada a esta función:
+        //  node app filtrar -c true
+
+        let filtrado = porHacer.getFiltrado(argv.completado);
+        for (let tarea of filtrado) {
             console.log('============== Por Hacer ==============.'.green);
             console.log(tarea.descripcion);
             console.log(`Estado: ${tarea.completado}`);

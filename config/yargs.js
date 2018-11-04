@@ -20,6 +20,9 @@ const argv = require('yargs')
         completado
     })
     .command('listar', 'Lista todos los elementos de la tabla')
+    .command('filtrar', 'Lista todos los elementos de la tabla que cumplan con el parametro completado', {
+        completado
+    })
     .command('borrar', 'Borra un elemento de la tabla', {
         descripcion
     })
